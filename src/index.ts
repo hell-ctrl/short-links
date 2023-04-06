@@ -7,7 +7,8 @@ const app = express();
 connectDB();
 
 app.use(express.json())
-app.use("/short", router);
+app.use("/shorten", router);
+app.use("/shorted", router):
 
 app.listen(3000, () => console.log("Server started"));
 
