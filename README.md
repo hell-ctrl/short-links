@@ -25,23 +25,29 @@ Este endpoint é usado para encurtar uma URL longa.
 
 #### Exemplo de Requisição
 
-```
+```javascript
+const axios = require('axios');
 
-POST https://api.meudominio.com/shorten
+const url = 'https://api.example.com/shortlinks';
 
-Content-Type: application/json
+axios.post(url, {
+  data: {
+    url: 'https://www.example.com'
+  }
+})
+.then((response) => {
+  console.log(response.data);
+})
+.catch((error) => {
+  console.error(error);
+});
 
-{
-
-"url": "https://www.meusite.com.br/minhapagina"
-
-}
 
 ```
 
 #### Exemplo de Resposta
 
-```
+```javascript
 
 HTTP/1.1 200 OK
 
@@ -49,8 +55,8 @@ Content-Type: application/json
 
 {
 
-"original_url": "https://www.meusite.com.br/minhapagina",
-"short_link": "https://meudominio.com/a1b2c3"
+  "original_url": "https://www.meusite.com.br/minhapagina",
+  "short_link": "https://meudominio.com/a1b2c3"
 
 }
 
@@ -70,49 +76,6 @@ Este endpoint é usado para redirecionar o usuário para a URL longa corresponde
 
 Redireciona o usuário para a URL longa correspondente.
 
-#### Exemplo de Requisição
-
-```
-GET https://meudominio.com/a1b2c3
-```
-
-## Exemplos de Uso
-
-Aqui estão alguns exemplos de como usar a API de Short Links.
-
-### Exemplo 1: Encurtar uma URL
-
-**Requisição:**
-
-```
-
-POST https://api.meudominio.com/shorten
-
-Content-Type: application/json
-
-{
-
-"url": "https://www.meusite.com.br/minhapagina"
-
-}
-
-```
-
-**Resposta:**
-
-```
-
-HTTP/1.1 200 OK
-
-Content-Type: application/json
-
-{
-
-"shortLink": "https://meudominio.com/a1b2c3"
-
-}
-
-```
 
 ## Considerações Finais
 
