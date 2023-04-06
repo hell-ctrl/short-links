@@ -49,7 +49,8 @@ Content-Type: application/json
 
 {
 
-"shortLink": "https://meudominio.com/a1b2c3"
+"original_url": "https://www.meusite.com.br/minhapagina",
+"short_link": "https://meudominio.com/a1b2c3"
 
 }
 
