@@ -62,7 +62,7 @@ Content-Type: application/json
 
 ```
 
-### `GET /:id`
+### `GET shorted/:id`
 
 Este endpoint é usado para redirecionar o usuário para a URL longa correspondente ao link encurtado.
 
