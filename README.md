@@ -1,108 +1,178 @@
-<h1>Documentação da api de Short Links</h1>
+# Documentação da API de Short Links
 
-<p>Esta é a documentação da API de Short Links, que permite aos usuários criar links curtos a partir de URLs longas.</p>
+A API de Short Links permite que os usuários criem links curtos para URLs longas.
 
-<h2>Visão geral</h2>
+## Endpoints da API
 
-<p>A API tem os seguintes endpoints:</p>
+A seguir, estão listados os endpoints disponíveis na API:
 
-<ul> 
+### `POST /shorten`
 
-  <li><code><strong>`/short`</strong></code>: cria um link curto para uma URL longa.</li>
+Este endpoint é usado para encurtar uma URL longa.
 
-  <li><code><strong>`/short:id`</strong></code>: redireciona para a URL correspondente ao link curto.</li>
+#### Parâmetros da Requisição
 
-</ul>
+| Nome | Tipo | Descrição |
 
-<h2>Endpoins</h2>
 
-<code><h3>`/short`</h3></code>
 
-<p>Cria um link curto para uma URL longa.</p>
+| `url` | String | **Obrigatório.** A URL longa a ser encurtada. |
 
-<p><strong>Requisição</strong></p>
+#### Resposta da Requisição
 
-<code><strong>`POST /short`</strong></code>
+| Código | Tipo | Descrição |
 
-<h3>Corpo da Requisição:</h3>
 
-<pre>{
 
-  "url": "https://www.exemplo.com/caminho/para/a/página"
+| 200 | Object | Retorna o link encurtado. |
 
-}
+| 400 | Object | Retorna uma mensagem de erro se o parâmetro `url` estiver faltando ou se a URL fornecida for inválida. |
 
-</pre>
+#### Exemplo de Requisição
 
-<h3>Respostas:</h3>
+```
 
-<ul>
+POST https://api.meudominio.com/shorten
 
-  <li>200 OK: o link curto foi criado com sucesso.</li>
+Content-Type: application/json
 
-  <li>400 Bad Request: a solicitação está faltando informações obrigatórias ou contém informações inválidas.</li>
+{
 
-  <li>500 Error: ocorreu um erro no servidor.</li>
-
-</ul>
-
-<h3>Corpo da resposta:</h3>
-
-<pre>{
-
-  "original_url": "https://example.com",
-
-  "shorted_link": "https://www.meusite.com/abc123"
+"url": "https://www.meusite.com.br/minhapagina"
 
 }
 
-</pre>
+```
 
-<code><h3>`/short/:id`</h3></code>
+#### Exemplo de Resposta
 
-<p>Redireciona para a URL correspondente ao link curto.</p>
+```
 
-<p><strong>Requisição</strong></p>
+HTTP/1.1 200 OK
 
-<code><strong>`GET /short/:id`</strong></code>
+Content-Type: application/json
 
-<h3>Respostas:</h3>
+{
 
-<ul>
+"shortLink": "https://meudominio.com/a1b2c3"
 
-  <li>404 Not Found: o link curto não foi encontrado.</li>
+}
 
-  <li>500 Error: ocorreu um erro no servidor</li>
+```
 
-</ul>
+### `GET /:id`
 
-<h2>Exemplos de uso:</h2>
+Este endpoint é usado para redirecionar o usuário para a URL longa correspondente ao link encurtado.
 
-<h3>Nodejs</h3>
+#### Parâmetros da Requisição
 
-<pre class="highlight"><code class="language-javascript">const axios = require('axios');
+| Nome | Tipo | Descrição |
 
-const longUrl = 'https://www.exemplo.com/caminho/para/a/página';
+| --- | --- | --- |
 
-axios.post('https://exemplo.com/api/shorten', { url: longUrl })
+| `id` | String | **Obrigatório.** O ID do link encurtado. |
 
-  .then(response => {
+#### Resposta da Requisição
 
-    console.log('URL encurtada:', response.data.shortUrl);
+Redireciona o usuário para a URL longa correspondente.
 
-  })
+#### Exemplo de Requisição
 
-  .catch(error => {
+```
 
-    console.error('Erro ao encurtar URL:', error.message);
+GET https://meudominio.com/a1b2c3
 
-  });
+```
+
+## Exemplos de Uso
+
+Aqui estão alguns exemplos de como usar a API de Short Links.
+
+### Exemplo 1: Encurtar uma URL
+
+**Requisição:**
+
+```
+
+POST https://api.meudominio.com/shorten
+
+Content-Type: application/json
+
+{
+
+"url": "https://www.meusite.com.br/minhapagina"
+
+}
+
+```
+
+**Resposta:**
+
+```
+
+HTTP/1.1 200 OK
+
+Content-Type: application/json
+
+{
+
+"shortLink": "https://meudominio.com/a1b2c3"
+
+}
+
+```
+
+## Considerações Finais
+
+A API de Short Links é uma maneira simples e eficaz de encurtar URLs longas para torná-las mais fáceis de compartilhar e memorizar. Se você tiver alguma dúvida ou problema com a API, entre em contato conosco pelo email `suporte@meudominio.com`.
+
+## Guia de Instalação
+
+Para instalar a API de Short Links em seu servidor, siga as etapas abaixo:
+
+1. Clone o repositório da API de Short Links do GitHub: ```git clone https://github.com/meudominio/shortlinks.git```
+
+2. Instale as dependências usando o NPM:
+
+  ``` 
+
+  cd shortlinks
+
+  npm install
+
+   ````
+
+  
+
+  
+
+  
+
+  
+
+3. Configure as variáveis de ambiente no arquivo `.env`:
+
+```
 
 
+URL_DB=mongodb://localhost:27017/shortlinks
+
+```
+
+4. Inicie o servidor:
+
+```
+
+npm start
+
+```
+
+## Autor
+
+A API de Short Links foi desenvolvida por Neto. Você pode entrar em contato comigo pelo meu email `netoff197@gmail.com`
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE.md para obter mais informações.
 
 
-</code></pre>
-
-<h2>Licença</h2>
-
-<p>Esta API está licenciada sob a licença MIT. Leia o arquivo <a href="./license.md">LICENSE</a> para mais informações.</p>
