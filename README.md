@@ -13,19 +13,14 @@ Este endpoint é usado para encurtar uma URL longa.
 #### Parâmetros da Requisição
 
 | Nome | Tipo | Descrição |
-
-
-
+| :----| :----| :---------|
 | `url` | String | **Obrigatório.** A URL longa a ser encurtada. |
 
 #### Resposta da Requisição
 
 | Código | Tipo | Descrição |
-
-
-
+| :------| :----| :---------|
 | 200 | Object | Retorna o link encurtado. |
-
 | 400 | Object | Retorna uma mensagem de erro se o parâmetro `url` estiver faltando ou se a URL fornecida for inválida. |
 
 #### Exemplo de Requisição
@@ -67,9 +62,7 @@ Este endpoint é usado para redirecionar o usuário para a URL longa corresponde
 #### Parâmetros da Requisição
 
 | Nome | Tipo | Descrição |
-
-| --- | --- | --- |
-
+| :----| :----| :---------|
 | `id` | String | **Obrigatório.** O ID do link encurtado. |
 
 #### Resposta da Requisição
@@ -79,9 +72,7 @@ Redireciona o usuário para a URL longa correspondente.
 #### Exemplo de Requisição
 
 ```
-
 GET https://meudominio.com/a1b2c3
-
 ```
 
 ## Exemplos de Uso
@@ -130,41 +121,27 @@ A API de Short Links é uma maneira simples e eficaz de encurtar URLs longas par
 
 Para instalar a API de Short Links em seu servidor, siga as etapas abaixo:
 
-1. Clone o repositório da API de Short Links do GitHub: ```git clone https://github.com/meudominio/shortlinks.git```
+1. Clone o repositório da API de Short Links do GitHub: ```git clone https://github.com/hell-ctrl/short-links.git```
 
 2. Instale as dependências usando o NPM:
 
   ``` 
-
-  cd shortlinks
+  cd short-links
 
   npm install
-
    ````
 
-  
-
-  
-
-  
-
-  
 
 3. Configure as variáveis de ambiente no arquivo `.env`:
 
 ```
-
-
-URL_DB=mongodb://localhost:27017/shortlinks
-
+URL_DB=mongodb-atlas-url
 ```
 
 4. Inicie o servidor:
 
 ```
-
 npm start
-
 ```
 
 ## Autor
