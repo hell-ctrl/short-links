@@ -80,7 +80,7 @@
 
 <h3>Nodejs</h3>
 
-<pre>const axios = require('axios');
+<pre class="highlight"><code class="language-javascript">const axios = require('axios');
 
 const longUrl = 'https://www.exemplo.com/caminho/para/a/página';
 
@@ -116,7 +116,7 @@ axios.post('https://exemplo.com/api/shorten', { url: longUrl })
 
   });
 
-</pre>
+</code></pre>
 
 <h2>Licença</h2>
 
