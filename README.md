@@ -114,6 +114,6 @@ A API de Short Links foi desenvolvida por Neto. Você pode entrar em contato com
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE.md para obter mais informações.
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
 
 
