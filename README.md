@@ -79,7 +79,7 @@ Redireciona o usuário para a URL longa correspondente.
 
 ## Considerações Finais
 
-A API de Short Links é uma maneira simples e eficaz de encurtar URLs longas para torná-las mais fáceis de compartilhar e memorizar. Se você tiver alguma dúvida ou problema com a API, entre em contato conosco pelo email `suporte@meudominio.com`.
+A API de Short Links é uma maneira simples e eficaz de encurtar URLs longas para torná-las mais fáceis de compartilhar e memorizar. Se você tiver alguma dúvida ou problema com a API, entre em contato comigo pelo email `suporte@meudominio.com`.
 
 ## Guia de Instalação
 
