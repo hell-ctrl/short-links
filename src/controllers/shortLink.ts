@@ -5,7 +5,7 @@ import {
 } from "../services/shortLinkServices";
 import { Request, Response } from "express";
 import shortId from "shortid";
-
+//const regexLink = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:www\.)?(?:(?:(?:[a-z0-9]|[a-z0-9][a-z0-9-]*[a-z0-9])\.)+(?:[a-z]{2,}|xn--[a-z0-9]+))(?::\d{2,5})?(?:\/[\S]*)?$/i;
 const shortLink = async (req: Request, res: Response) => {
   try {
     const url: string = req.body.url;
