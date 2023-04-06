@@ -98,23 +98,8 @@ axios.post('https://exemplo.com/api/shorten', { url: longUrl })
 
   });
 
-const axios = require('axios');
 
-const longUrl = 'https://www.exemplo.com/caminho/para/a/página';
 
-axios.post('https://exemplo.com/api/shorten', { url: longUrl })
-
-  .then(response => {
-
-    console.log('URL encurtada:', response.data.shortUrl);
-
-  })
-
-  .catch(error => {
-
-    console.error('Erro ao encurtar URL:', error.message);
-
-  });
 
 </code></pre>
 
