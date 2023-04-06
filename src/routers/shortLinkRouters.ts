@@ -3,7 +3,7 @@ import { shortLink, redirectToOriginalUrl } from "../controllers/shortLink";
 
 const router = Router();
 
-router.post("/", shortLink);
-router.get("/:id", redirectToOriginalUrl);
+router.post("/shorten", shortLink);
+router.get("/shorted/:id", redirectToOriginalUrl);
 
 export default router;
