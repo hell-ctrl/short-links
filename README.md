@@ -6,7 +6,7 @@ A API de Short Links permite que os usuários criem links curtos para URLs longa
 
 A seguir, estão listados os endpoints disponíveis na API:
 
-### `POST /shorten`
+### `POST /shortlink`
 
 Este endpoint é usado para encurtar uma URL longa.
 
@@ -62,7 +62,7 @@ Content-Type: application/json
 
 ```
 
-### `GET shorted/:id`
+### `GET shortlink/:id`
 
 Este endpoint é usado para redirecionar o usuário para a URL longa correspondente ao link encurtado.
 
@@ -79,7 +79,7 @@ Redireciona o usuário para a URL longa correspondente.
 
 ## Considerações Finais
 
-A API de Short Links é uma maneira simples e eficaz de encurtar URLs longas para torná-las mais fáceis de compartilhar e memorizar. Se você tiver alguma dúvida ou problema com a API, entre em contato comigo pelo email `suporte@meudominio.com`.
+A API de Short Links é uma maneira simples e eficaz de encurtar URLs longas para torná-las mais fáceis de compartilhar e memorizar.
 
 ## Guia de Instalação
 
@@ -98,15 +98,15 @@ Para instalar a API de Short Links em seu servidor, siga as etapas abaixo:
 
 3. Configure as variáveis de ambiente no arquivo `.env`:
 
-```
-URL_DB=mongodb-atlas-url
-```
+  ```
+  URL_DB=mongodb-atlas-url
+  ```
 
 4. Inicie o servidor:
 
-```
-npm start
-```
+  ```
+  npm start
+  ```
 
 ## Autor
 
